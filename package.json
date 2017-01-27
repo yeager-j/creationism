@@ -1,0 +1,23 @@
+{
+  "name": "creationism",
+  "version": "1.0.0",
+  "description": "A visual representation of their enormous error.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeager-j/creationism.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeager-j/creationism/issues"
+  },
+  "homepage": "https://github.com/yeager-j/creationism#readme",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-sanitize": "^1.6.1"
+  }
+}

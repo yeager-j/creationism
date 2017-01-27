@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="creationism">
 <head>
     <meta charset="UTF-8">
-    <title>Creationists Are Silly People</title>
+    <title>Creationists Are In Error</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <style>
@@ -22,35 +22,37 @@
             padding: 5px;
         }
 
-        .space {
-            height: 1000px;
+        li {
+            list-style-type: none;
+            margin-bottom: 1000px;
         }
     </style>
 </head>
-<body>
+<body ng-controller="MainController as vm">
 
-<div class="row">
-    <div class="col-md-3">
-        <h1>Creationists Are Silly People</h1>
-        <p>See this green line? That represents 6000 years. See this blue box? That represents 13.8 billion years.</p>
-        <p>Take a scroll.</p>
+    <div class="row">
+        <div class="col-md-3">
+            <h1>Creationists Are In Error</h1>
+            <p>See this green line at the top of the blue box? That represents 6000 years. See this blue box? That represents 13.8 billion years.</p>
+            <p>Take a scroll.</p>
 
-        <div class="space"></div>
+            <ul>
+                <li ng-repeat="fact in vm.factList">
+                    <span ng-bind-html="fact.text"></span> <a href="{{ fact.source }}" ng-if="fact.source">[Source]</a>
+                </li>
+            </ul>
+        </div>
 
-        <p>The green line is <b>1px</b> tall. The blue box is <b>2,300,000px</b> tall.</p>
-        <p>That's how big their error is.</p>
+        <div class="col-md-9">
+            <div class="creationism"></div>
 
-        <div class="space"></div>
-
-        <p>That's like believing the distance from New York to California is <b>28 feet</b>.</p>
+            <div class="science"></div>
+        </div>
     </div>
 
-    <div class="col-md-9">
-        <div class="creationism"></div>
 
-        <div class="science"></div>
-    </div>
-</div>
-
+    <script src="node_modules/angular/angular.min.js" type="text/javascript"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.min.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
 </body>
 </html>
